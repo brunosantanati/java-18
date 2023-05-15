@@ -2,7 +2,7 @@
 
 ## Useful Links
 
-### Podcast and JEPs Links
+### Podcast link and JEPs it talks about
 
 [Episode 23 "Java 18 is Here!"](https://inside.java/2022/03/22/podcast-023/)  
 Spotify - Inside Java - [Podcast Episode "Java 18 is Here!"](https://open.spotify.com/episode/1JCGSs0ZUC8PTRUYZvaZ5F)  
@@ -15,3 +15,19 @@ Spotify - Inside Java - [Podcast Episode "Java 18 is Here!"](https://open.spotif
 
 [Inside Java Website](https://inside.java/)  
 [Executable JavaDoc Code Snippets](https://www.morling.dev/blog/executable-javadoc-code-snippets/)  
+
+## List of JEPs
+
+[Link with all JEPs](https://openjdk.org/projects/jdk/18/)  
+
+```
+400:	UTF-8 by Default
+408:	Simple Web Server
+413:	Code Snippets in Java API Documentation
+416:	Reimplement Core Reflection with Method Handles
+417:	Vector API (Third Incubator)
+418:	Internet-Address Resolution SPI
+419:	Foreign Function & Memory API (Second Incubator)
+420:	Pattern Matching for switch (Second Preview)
+421:	Deprecate Finalization for Removal
+```
