@@ -56,7 +56,8 @@ public class SimpleWebServerDemo {
 
   public static void main(String[] args) throws IOException {
     Predicate<Request> IS_GET = r -> r.getRequestMethod().equals("GET");
-    var jsonHandler = HttpHandlers.of(200, Headers.of("Content-Type", "application/json"), Files.readString(Path.of("C:/test/todos.json")));
+    var jsonHandler = HttpHandlers.of(200, Headers.of("Content-Type", "application/json"),
+        Files.readString(Path.of("C:/test/todos.json")));
     var notAllowedHandler = HttpHandlers.of(405, Headers.of("Allow", "GET"), "");
     var handler = HttpHandlers.handleOrElse(IS_GET, jsonHandler, notAllowedHandler);
 
