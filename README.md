@@ -15,6 +15,9 @@ Spotify - Inside Java - [Podcast Episode "Java 18 is Here!"](https://open.spotif
 
 [Inside Java Website](https://inside.java/)  
 [Executable JavaDoc Code Snippets](https://www.morling.dev/blog/executable-javadoc-code-snippets/)  
+[Inside Java - Episode 22 “JEP 408 - Simple Web Server”](https://inside.java/2022/03/04/podcast-022/)  
+[Java 18’s Simple Web Server: A tool for the command line and beyond](https://blogs.oracle.com/javamagazine/post/java-18-simple-web-server)  
+[Working with the Simple Web Server](https://inside.java/2021/12/06/working-with-the-simple-web-server/)  
 
 ## List of JEPs
 
