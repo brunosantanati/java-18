@@ -19,7 +19,7 @@ Spotify - Inside Java - [Podcast Episode "Java 18 is Here!"](https://open.spotif
 [Java 18’s Simple Web Server: A tool for the command line and beyond](https://blogs.oracle.com/javamagazine/post/java-18-simple-web-server)  
 [Working with the Simple Web Server](https://inside.java/2021/12/06/working-with-the-simple-web-server/)  
 
-## List of JEPs
+### List of JEPs
 
 [Link with all JEPs](https://openjdk.org/projects/jdk/18/)  
 
@@ -33,4 +33,38 @@ Spotify - Inside Java - [Podcast Episode "Java 18 is Here!"](https://open.spotif
 419:	Foreign Function & Memory API (Second Incubator)
 420:	Pattern Matching for switch (Second Preview)
 421:	Deprecate Finalization for Removal
+```
+
+### Use Simple Web Server via command line
+
+<code>./jwebserver -d /c/test -o verbose</code>
+
+### Use Simple Web Server programmatically
+
+```java
+package org.example;
+
+import com.sun.net.httpserver.*;
+
+import java.io.IOException;
+import java.net.InetSocketAddress;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.function.Predicate;
+
+public class SimpleWebServerDemo {
+
+  public static void main(String[] args) throws IOException {
+    Predicate<Request> IS_GET = r -> r.getRequestMethod().equals("GET");
+    var jsonHandler = HttpHandlers.of(200, Headers.of("Content-Type", "application/json"), Files.readString(Path.of("C:/test/todos.json")));
+    var notAllowedHandler = HttpHandlers.of(405, Headers.of("Allow", "GET"), "");
+    var handler = HttpHandlers.handleOrElse(IS_GET, jsonHandler, notAllowedHandler);
+
+    var server = HttpServer.create(new InetSocketAddress(8080),10, "/somecontext/", handler);
+    server.start();
+    System.out.println("Server started");
+    // After running this code you can access http://127.0.0.1:8080/somecontext/ in the browser
+  }
+
+}
 ```
